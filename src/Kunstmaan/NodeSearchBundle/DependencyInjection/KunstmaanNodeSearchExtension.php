@@ -52,61 +52,40 @@ class KunstmaanNodeSearchExtension extends Extension implements PrependExtension
             'mapping' => [
                 'root_id' => [
                     'type' => 'integer',
-                    'include_in_all' => false,
-                    'index' => 'not_analyzed'
                 ],
                 'node_id' => [
                     'type' => 'integer',
-                    'include_in_all' => false,
-                    'index' => 'not_analyzed'
                 ],
                 'nodetranslation_id' => [
                     'type' => 'integer',
-                    'include_in_all' => false,
-                    'index' => 'not_analyzed'
                 ],
                 'nodeversion_id' => [
                     'type' => 'integer',
-                    'include_in_all' => false,
-                    'index' => 'not_analyzed'
                 ],
                 'title' => [
-                    'type' => 'string',
-                    'include_in_all' => true
+                    'type' => 'text',
                 ],
                 'slug' => [
-                    'type' => 'string',
-                    'include_in_all' => false,
-                    'index' => 'not_analyzed'
+                    'type' => 'text',
                 ],
                 'type' => [
-                    'type' => 'string',
-                    'include_in_all' => false,
-                    'index' => 'not_analyzed'
+                    'type' => 'text',
+                    'fielddata' => true,
                 ],
                 'page_class' => [
-                    'type' => 'string',
-                    'include_in_all' => false,
-                    'index' => 'not_analyzed'
+                    'type' => 'text',
                 ],
                 'content' => [
-                    'type' => 'string',
-                    'include_in_all' => true
+                    'type' => 'text',
                 ],
                 'created' => [
                     'type' => 'date',
-                    'include_in_all' => false,
-                    'index' => 'not_analyzed'
                 ],
                 'updated' => [
                     'type' => 'date',
-                    'include_in_all' => false,
-                    'index' => 'not_analyzed'
                 ],
                 'view_roles' => [
-                    'type' => 'string',
-                    'include_in_all' => true,
-                    'index' => 'not_analyzed',
+                    'type' => 'text',
                 ],
             ]
         ]);

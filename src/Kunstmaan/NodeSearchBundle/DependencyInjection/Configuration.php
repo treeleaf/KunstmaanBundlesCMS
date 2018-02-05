@@ -29,15 +29,15 @@ class Configuration implements ConfigurationInterface
         $properties = $rootNode->children()->arrayNode('mapping')->useAttributeAsKey('name')->prototype('array');
 
         $properties->children()->scalarNode('type')->beforeNormalization()->ifNotInArray($types = [
-            'string', 'token_count', 'text', 'keyword',
+            'token_count', 'text', 'keyword',
             'float', 'double', 'byte', 'short', 'integer', 'long',
             'date',
             'boolean',
             'binary',
         ])->thenInvalid('type must be one of: ' . implode(', ', $types));
-        $properties->children()->scalarNode('index')->beforeNormalization()->ifNotInArray(['analyzed', 'not_analyzed', 'no'])
-            ->thenInvalid("index must be one of: analyzed, not_analyzed, no");
-        $properties->children()->booleanNode('include_in_all');
+        $properties->children()->booleanNode('fielddata');
+        $properties->children()->scalarNode('index')->beforeNormalization()->ifNotInArray(['true', 'false', true, false])
+            ->thenInvalid("index must be one of: true, false");
         $properties->children()->booleanNode('store');
         $properties->children()->floatNode('boost');
         $properties->children()->scalarNode('null_value');
