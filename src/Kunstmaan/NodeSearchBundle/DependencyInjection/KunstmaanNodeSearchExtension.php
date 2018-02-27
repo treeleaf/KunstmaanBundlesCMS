@@ -70,19 +70,12 @@ class KunstmaanNodeSearchExtension extends Extension implements PrependExtension
                 ],
                 'type' => [
                     'type' => 'text',
-                    'fielddata' => true,
                 ],
                 'page_class' => [
                     'type' => 'keyword',
                 ],
                 'content' => [
                     'type' => 'text',
-                ],
-                'created' => [
-                    'type' => 'date',
-                ],
-                'updated' => [
-                    'type' => 'date',
                 ],
                 'view_roles' => [
                     'type' => 'keyword',
