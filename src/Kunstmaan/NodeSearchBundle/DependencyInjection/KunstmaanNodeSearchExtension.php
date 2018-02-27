@@ -73,7 +73,7 @@ class KunstmaanNodeSearchExtension extends Extension implements PrependExtension
                     'fielddata' => true,
                 ],
                 'page_class' => [
-                    'type' => 'text',
+                    'type' => 'keyword',
                 ],
                 'content' => [
                     'type' => 'text',
@@ -85,7 +85,7 @@ class KunstmaanNodeSearchExtension extends Extension implements PrependExtension
                     'type' => 'date',
                 ],
                 'view_roles' => [
-                    'type' => 'text',
+                    'type' => 'keyword',
                 ],
             ]
         ]);
